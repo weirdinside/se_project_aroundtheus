@@ -30,5 +30,11 @@ And here is the mobile view:
 
 ![Alt text](./images/sitepreview-mobile.png "site preview image mobile version")
 
+Here is a video documenting the website:
+
+https://drive.google.com/file/d/1kKF4IqcW3f29t1NnDqFz79ctkRwlHTdM/view?usp=sharing
+
+
+
 
 
