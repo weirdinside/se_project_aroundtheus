@@ -1,0 +1,11 @@
+.header {
+    margin-top: 45px;
+  }
+  
+ @media screen and (min-width: 320px) and (max-width: 918px) {
+    .header {
+      margin-top: 27px;
+      margin-left: 28px;
+    }
+
+}
