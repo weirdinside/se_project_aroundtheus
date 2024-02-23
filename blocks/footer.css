@@ -1,8 +1,7 @@
 .footer {
   display: flex;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-top: 67px;
   padding-bottom: 60px;
   max-width: 880px;
@@ -10,7 +9,6 @@
 }
 
 .footer__copyright {
-  text-align: left;
   align-items: flex-start;
   font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
@@ -25,7 +23,6 @@
   .footer {
     padding-top: 48px;
     padding-bottom: 36px;
-    padding-left: 10%;
   }
 
   .footer__copyright {
@@ -33,5 +30,6 @@
     font-weight: 400;
     line-height: 17px;
     letter-spacing: 0em;
+    margin-left: 10%;
   }
 }
