@@ -34,6 +34,9 @@ Here is a video documenting the website:
 
 https://drive.google.com/file/d/1kKF4IqcW3f29t1NnDqFz79ctkRwlHTdM/view?usp=sharing
 
+Link to published site:
+
+https://weirdinside.github.io/se_project_aroundtheus/
 
 
 
