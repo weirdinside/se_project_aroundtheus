@@ -1,0 +1,88 @@
+.modal {
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  margin: auto;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__container {
+  color: black;
+  background-color: white;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  height: 330px;
+}
+
+.modal__exit-button {
+  background-image: url(../images/closeicon.svg);
+  border: none;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+}
+
+.modal__heading {
+  padding: 36px 36px 0px 36px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 54px;
+  margin-top: 0px;
+}
+
+.modal__form {
+  padding: 0px 36px;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+}
+
+.modal__form_input {
+  border: 0;
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+  width: 358px;
+  display: flex;
+}
+
+.modal__form_input::placeholder {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.modal__button {
+  color: white;
+  margin-top: 18px;
+  background-color: black;
+  border: 0;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 50px;
+  width: 358px;
+}
