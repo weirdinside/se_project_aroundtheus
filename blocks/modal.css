@@ -9,6 +9,8 @@
   margin: auto;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
 }
 
 .modal__container {
@@ -28,12 +30,18 @@
   border: none;
   width: 40px;
   height: 40px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   bottom: calc(100% + 5px);
   left: calc(100% + 5px);
+  z-index: 3;
+}
+
+.modal__exit-button:hover{
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .modal__heading {
@@ -85,4 +93,9 @@
   text-align: center;
   height: 50px;
   width: 358px;
+}
+
+.modal__opened{
+    visibility: visible;
+    opacity: 1;
 }
