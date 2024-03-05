@@ -39,9 +39,9 @@
   z-index: 3;
 }
 
-.modal__exit-button:hover{
-    opacity: 0.6;
-    cursor: pointer;
+.modal__exit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 .modal__heading {
@@ -95,7 +95,12 @@
   width: 358px;
 }
 
-.modal__opened{
-    visibility: visible;
-    opacity: 1;
+.modal__button:hover{
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.modal__opened {
+  visibility: visible;
+  opacity: 1;
 }
