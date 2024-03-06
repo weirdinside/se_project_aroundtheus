@@ -95,12 +95,59 @@
   width: 358px;
 }
 
-.modal__button:hover{
-    cursor: pointer;
-    opacity: 80%;
+.modal__button:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
 
-.modal__opened {
+.modal_opened {
   visibility: visible;
   opacity: 1;
+}
+
+@media screen and (min-width: 320px) and (max-width: 918px) {
+  .modal__container {
+    max-width: 282px;
+    max-height: 322px;
+  }
+
+  .modal__heading {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 25px;
+    margin-bottom: 75px;
+    margin-left: 22px;
+    padding: 0;
+  }
+
+  .modal__form {
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-bottom: 30px;
+    max-width: 238px;
+    padding: 0px;
+  }
+
+  .modal__input {
+    max-width: 238px;
+    padding: 0;
+  }
+
+  .modal__button {
+    max-width: 238px;
+    margin-bottom: 25px;
+    padding: 0;
+  }
+
+  .modal__exit-button {
+    width: 30px;
+    height: 30px;
+    left: auto;
+    right: 0px;
+    bottom: calc(100% + 20px);
+    /* above is not as in figma exactly, 
+    but the asset that i am using is unrotated 
+    and therefore i had to get as close as possible
+    without being exact */
+  }
 }
