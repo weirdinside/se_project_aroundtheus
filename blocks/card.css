@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  position: relative;
   flex-direction: column;
   border-radius: 10px;
   list-style: none;
@@ -50,7 +51,26 @@
   cursor: pointer;
 }
 
+.card__like-button.liked{
+  background: transparent url(../images/Heartliked.svg) center no-repeat;
+}
+
 .card__like-button:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.card__delete-button{
+  position: absolute;
+  background: transparent url(../images/trash.svg) center no-repeat;
+  right: 18px;
+  top: 15px;
+  width: 18px;
+  height: 19px;
+  border-style: none;
+}
+
+.card__delete-button:hover{
   opacity: 50%;
   cursor: pointer;
 }
