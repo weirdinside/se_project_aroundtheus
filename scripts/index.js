@@ -97,7 +97,7 @@ function getCardView(cardData){
 
   // create click event for preview modal
   cardImageElement.addEventListener('click', (e)=> {
-    photoPreviewImage.alt = "Photo of " + e.target.alt;
+    photoPreviewImage.alt = "Photo of " + cardData.name;
     photoPreviewImage.src = e.target.src;
     photoPreviewName.textContent = e.target.alt;
     openModal(photoPreviewModal);
@@ -121,7 +121,7 @@ initialCards.forEach((cardData) => {
 
 profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
-  fillProfileForm;
+  fillProfileForm();
 });
 
 cardAddButton.addEventListener("click", () => {
