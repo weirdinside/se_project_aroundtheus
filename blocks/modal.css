@@ -14,17 +14,17 @@
   transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.modal__container-preview{
+.modal__container-preview {
   position: relative;
   margin: auto;
 }
 
-.preview__picture{
-  max-width: 75vw;;
+.preview__picture {
+  max-width: 75vw;
   max-height: 75vh;
 }
 
-.preview__name{
+.preview__name {
   font-family: Inter;
   font-size: 12px;
   font-weight: 400;
@@ -84,8 +84,35 @@
 .modal__input {
   border: 0;
   border-bottom: 1px solid black;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   display: flex;
+}
+
+.modal__error {
+  height: 30px;
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.modal__button.disabled {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.252);
+  background-color: rgba(211, 211, 211, 0);
+  pointer-events: none;
+  user-select: none;
+}
+
+.modal__error_visible {
+  opacity: 1;
 }
 
 .modal__form_input::placeholder {

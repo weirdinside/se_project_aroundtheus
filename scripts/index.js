@@ -36,36 +36,37 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescInput = document.querySelector("#profile-desc-input");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListElement = document.querySelector(".cards__list");
-const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
 
 const cardAddModal = document.querySelector("#add-image-modal");
 const cardAddButton = document.querySelector("#image-add-button");
 const cardAddCloseButton = cardAddModal.querySelector("#close-button");
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 const photoPreviewModal = document.querySelector("#image-preview-modal");
-const photoPreviewModalCloseButton = photoPreviewModal.querySelector("#close-button");
+const photoPreviewModalCloseButton =
+  photoPreviewModal.querySelector("#close-button");
 const photoPreviewImage = photoPreviewModal.querySelector("#preview-picture");
 const photoPreviewName = photoPreviewModal.querySelector(".preview__name");
 
-
 // Functions //
 
-function openModal(modal){
+function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
-function closeModal(modal){
+function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
 function handleProfileFormSubmit(event) {
-    event.preventDefault();
-    profileDesc.textContent = profileDescInput.value;
-    profileTitle.textContent = profileTitleInput.value;
-    closeModal(profileEditModal);
+  event.preventDefault();
+  profileDesc.textContent = profileDescInput.value;
+  profileTitle.textContent = profileTitleInput.value;
+  closeModal(profileEditModal);
 }
 
-function renderCard(cardEl, container){
+function renderCard(cardEl, container) {
   container.prepend(cardEl);
 }
 
@@ -74,7 +75,7 @@ function fillProfileForm() {
   profileDescInput.value = profileDesc.textContent;
 }
 
-function getCardView(cardData){
+function getCardView(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
   cardImageElement.alt = cardData.name;
@@ -84,25 +85,23 @@ function getCardView(cardData){
 
   // add event listener for card like button
   const cardLikeButton = cardElement.querySelector(".card__like-button");
-  cardLikeButton.addEventListener('click', () => {
+  cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("liked");
   });
 
   // add event listener for card delete button
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  cardDeleteButton.addEventListener('click', ()=>{
+  cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-  
 
   // create click event for preview modal
-  cardImageElement.addEventListener('click', (e)=> {
+  cardImageElement.addEventListener("click", (e) => {
     photoPreviewImage.alt = "Photo of " + cardData.name;
     photoPreviewImage.src = e.target.src;
     photoPreviewName.textContent = e.target.alt;
     openModal(photoPreviewModal);
-  })
-
+  });
 
   return cardElement;
 }
@@ -114,10 +113,7 @@ initialCards.forEach((cardData) => {
   renderCard(cardView, cardListElement);
 });
 
-
 // Event Listeners //
-
-
 
 profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
@@ -126,6 +122,22 @@ profileEditButton.addEventListener("click", () => {
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardAddModal);
+});
+
+// escape key handler
+addEventListener("keyup", (e) => {
+  if (e.key === "Escape") {
+    let targetModal = document.querySelector(".modal_opened");
+    closeModal(targetModal);
+  }
+});
+
+//click off modal handler
+addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal")) {
+    let targetModal = document.querySelector(".modal_opened");
+    closeModal(targetModal);
+  }
 });
 
 profileEditCloseButton.addEventListener("click", () => {
@@ -142,7 +154,7 @@ photoPreviewModalCloseButton.addEventListener("click", () => {
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
-cardAddForm.addEventListener("submit", (e)=>{
+cardAddForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target.title.value;
   const link = e.target.link.value;
@@ -151,9 +163,6 @@ cardAddForm.addEventListener("submit", (e)=>{
     link: link,
   });
   renderCard(cardView, cardListElement);
-  cardAddForm.reset();  
+  cardAddForm.reset();
   closeModal(cardAddModal);
 });
-
-
-

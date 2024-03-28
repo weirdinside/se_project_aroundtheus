@@ -60,14 +60,22 @@
             type="text"
             name="title"
             placeholder="Name"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span class="modal__error" id="profile-title-input-error"></span>
           <input
             id="profile-desc-input"
             class="modal__input"
             type="text"
             name="description"
             placeholder="Description"
+            minlength="2"
+            maxlength="200"
+            required
           />
+          <span class="modal__error" id="profile-desc-input-error"></span>
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
@@ -92,8 +100,11 @@
             type="text"
             name="title"
             placeholder="Name of place"
+            minlength="1"
+            maxlength="30"
             required
           />
+          <span class="modal__error" id="place-name-error"></span>
           <input
             id="image-link-input"
             class="modal__input"
@@ -102,7 +113,8 @@
             placeholder="Link to image of place"
             required
           />
-          <button type="submit" class="modal__button">Save</button>
+          <span class="modal__error" id="image-link-input-error"></span>
+          <button type="submit" class="modal__button disabled" disabled>Save</button>
         </form>
       </div>
     </div>
@@ -119,5 +131,6 @@
     </template>
 
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
