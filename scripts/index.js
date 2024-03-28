@@ -101,6 +101,8 @@ function getCardView(cardData) {
     photoPreviewImage.src = e.target.src;
     photoPreviewName.textContent = e.target.alt;
     openModal(photoPreviewModal);
+    photoPreviewModal.addEventListener('mousedown', closeModalOnRemoteClick);
+    document.addEventListener('keydown', closeModalByEscape);
   });
 
   return cardElement;
@@ -117,39 +119,52 @@ initialCards.forEach((cardData) => {
 
 profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
+  profileEditModal.addEventListener('mousedown', closeModalOnRemoteClick);
   fillProfileForm();
+  document.addEventListener('keydown', closeModalByEscape);
 });
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardAddModal);
+  cardAddModal.addEventListener('mousedown', closeModalOnRemoteClick);
+  document.addEventListener('keydown', closeModalByEscape);
 });
 
-// escape key handler
-addEventListener("keyup", (e) => {
+// escape key function
+
+function closeModalByEscape(e){
   if (e.key === "Escape") {
-    let targetModal = document.querySelector(".modal_opened");
+    const targetModal = document.querySelector(".modal_opened");
     closeModal(targetModal);
   }
-});
+  document.removeEventListener('keydown', closeModalByEscape);
+}
 
-//click off modal handler
-addEventListener("click", (e) => {
-  if (e.target.classList.contains("modal")) {
-    let targetModal = document.querySelector(".modal_opened");
-    closeModal(targetModal);
-  }
-});
+//click off modal function
+
+function closeModalOnRemoteClick(e){
+    if (e.target.classList.contains("modal")) {
+      const targetModal = document.querySelector(".modal_opened");
+      closeModal(targetModal);
+    };
+};
 
 profileEditCloseButton.addEventListener("click", () => {
   closeModal(profileEditModal);
+  profileEditModal.removeEventListener('mousedown', closeModalOnRemoteClick);
+  document.removeEventListener('keydown', closeModalByEscape);
 });
 
 cardAddCloseButton.addEventListener("click", () => {
   closeModal(cardAddModal);
+  cardAddModal.removeEventListener('mousedown', closeModalOnRemoteClick);
+  document.removeEventListener('keydown', closeModalByEscape);
 });
 
 photoPreviewModalCloseButton.addEventListener("click", () => {
   closeModal(photoPreviewModal);
+  photoPreviewModal.removeEventListener('mousedown', closeModalOnRemoteClick);
+  document.removeEventListener('keydown', closeModalByEscape);
 });
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
